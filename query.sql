@@ -1,6 +1,5 @@
 
 SELECT
-	r.id,
     r.name AS "ПІБ власника",
     r.email AS "Електронна пошта",
     b.num_of_flat AS "Номер квартири",
@@ -9,11 +8,11 @@ SELECT
     f.area AS "Площа квартири"
 FROM
     homework7.resident r
- JOIN
+JOIN
     homework7.flat_owner fo ON r.id = fo.resident_id
- JOIN
+JOIN
     homework7.flat f ON r.flat_id = f.id
- JOIN
+JOIN
     homework7.building b ON r.building_id = b.id
 WHERE
     r.parking_right = 0
